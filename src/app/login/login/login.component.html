@@ -17,13 +17,14 @@
             <span *ngIf="formControls.email.errors.email" class="loginerror">Email is required</span>
             <span *ngIf="formControls.email.errors.minlength" class="loginerror">Email requires not less than 3 characters </span>
           </ng-container>
+          <ng-container *ngIf="errormessage != ''" >
+            <div class="px-3 mt-3 focus:outline-none">
+              <span class="mx-3 loginerror">{{ errormessage }}</span>
+            </div>
+          </ng-container>
         </div>
 
-        <ng-container *ngIf="errormessage != ''" >
-          <div class="px-3 mt-3 focus:outline-none">
-            <span class="mx-3 loginerror">{{ errormessage }}</span>
-          </div>
-        </ng-container>
+        
 
         <div class="px-3 focus:outline-none relative">
           <label for="password" class="block text-400 my-2"> Password</label>
