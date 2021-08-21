@@ -1,0 +1,78 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* You can add global styles to this file, and also import other style files */
+
+
+.logincontainer {
+    @apply grid sm:grid-cols-2 mx-5 my-3;
+    height: 100vh;
+}
+
+.logincontent {
+    @apply bg-purple-600  flex justify-center sm:col-span-1 h-full items-center;
+    @media only screen and (max-width: 600px)  {
+        display: none;
+    }
+}
+.widthinherit {
+    width: inherit;
+}
+.loginform {
+    @apply flex bg-blue-200 justify-center sm:col-span-1 h-full items-center;
+}
+.loginerror {
+    @apply text-red-700 block w-64 ml-1;
+}
+
+.registercontent {
+    @apply sm:col-span-2  md:flex justify-center items-start flex-col p-10;
+    @media only screen and (max-width: 600px)  {
+        display: none;
+    }
+}
+
+.mainsidebar {
+    @apply  bg-white;
+    height: inherit;
+    @media only screen and (max-width: 600px)  {
+        display: none;
+    }
+}
+
+.maincontent {
+    @apply min-h-screen flex-1 flex flex-col;
+}
+
+
+.menu-scroll::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+.menu-scroll::-webkit-scrollbar-track {
+    background: #FFFFFF;        /* color of the tracking area */
+}
+.menu-scroll::-webkit-scrollbar-thumb {
+    background-color: #D1D5DB;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #FFFFFF;  /* creates padding around scroll thumb */
+}
+
+main::-webkit-scrollbar {
+    width: 12px;    
+    height: 5px;           /* width of the entire scrollbar */
+}
+main::-webkit-scrollbar-track {
+    background: #D1D5DB;        /* color of the tracking area */
+}
+main::-webkit-scrollbar-thumb {
+    background-color: #A78BFA;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #D1D5DB;  /* creates padding around scroll thumb */
+}
+// .sidbar {
+//     @media only screen and (max-width: 600px) {
+//         body {
+//             display: none;
+//         }
+//     }
+// }

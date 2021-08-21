@@ -1,0 +1,66 @@
+<div class="bg-grey-100  h-screen p-6 md:p-16" style="max-width: 1800px;">
+    <div class="grid h-full sm:grid-cols-5 text-purple-600">
+        <div class="registercontent">
+            <h1 class="font-bold text-3xl my-2">Alerterpay</h1>
+            <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas veritatis voluptates quia at aperiam magnam, rerum fuga adipisci soluta nam eos dolorum mollitia doloremque, nisi inventore vero corrupti ipsum praesentium?
+            </div>
+        </div>
+
+        <div class="sm:col-span-3 flex flex-wrap justify-center items-center overflow-y-scroll rounded-l-lg shadow-xl p-10 bg-indigo-100">
+            <div class="">
+                <div class=" py-4 rounded-md w-full text-justify">
+                    <h2 class="uppercase font-bold text-2xl text-purple-600">Sign Up</h2>
+                    <p class="text-purple-600">Please provide your data to create your account</p>
+                </div>
+                <div class="w-full mt-4">
+                    <form>
+                        <div class="grid md:grid-cols-2 md:gap-4">
+                            <div class="w-full">
+                                <label for="firstname" class="block text-400 my-2 text-purple-600"> Firstname </label>
+                                <input id="firstname" type="text" class="focus:ring-2 focus:ring-purple-600 border-0 placeholder-gray-500 placeholder-opacity-50 w-full" placeholder="Firstname">
+                            </div>
+                            <div class="w-full">
+                                <label for="lastname" class="block text-400 my-2 text-purple-600"> Lastname</label>
+                                <input id="lastname" type="text" formControlName="email" class="focus:ring-2 focus:ring-purple-600 border-0 placeholder-gray-500 placeholder-opacity-50 w-full" placeholder="Lastname">
+                            </div>
+        
+    
+                            <div class="w-full">
+                                <label for="email" class="block text-400 my-2 text-purple-600"> Email </label>
+                                <input id="email" type="text" class="focus:ring-2 focus:ring-purple-600 border-0 placeholder-gray-500 placeholder-opacity-50 w-full" placeholder="email">
+                            </div>
+                            <div class="w-full">
+                                <label for="phone" class="block text-400 my-2 text-purple-600"> Phone</label>
+                                <input id="phone" type="text" formControlName="email" class="focus:ring-2 focus:ring-purple-600 border-0 placeholder-gray-500 placeholder-opacity-50 w-full" placeholder="Phone Number">
+                            </div>
+    
+                            <div class="form-control relative">
+                                <label for="password" class="block text-400 my-2 text-purple-600"> Password</label>
+                                <input id="password" [type]="eye ? 'password' : 'text'" formControlName="email" class="focus:ring-2 focus:ring-purple-600 border-0 placeholder-gray-500 placeholder-opacity-50 w-full" placeholder="Password">
+                                <svg xmlns="http://www.w3.org/2000/svg" (click)="eyetoggle()" class="h-5 w-5 absolute cursor-pointer top-12 left-80 sm:left-90" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M3.707 2.293a1 1 0 00-1.414 1.414l14 14a1 1 0 001.414-1.414l-1.473-1.473A10.014 10.014 0 0019.542 10C18.268 5.943 14.478 3 10 3a9.958 9.958 0 00-4.512 1.074l-1.78-1.781zm4.261 4.26l1.514 1.515a2.003 2.003 0 012.45 2.45l1.514 1.514a4 4 0 00-5.478-5.478z" clip-rule="evenodd" />
+                                    <path d="M12.454 16.697L9.75 13.992a4 4 0 01-3.742-3.741L2.335 6.578A9.98 9.98 0 00.458 10c1.274 4.057 5.065 7 9.542 7 .847 0 1.669-.105 2.454-.303z" />
+                                  </svg>
+                            </div>
+                            <div class="form-control">
+                                <label for="email" class="block text-400 my-2 text-purple-600"> Password Confirmation </label>
+                                <input id="email" type="email" formControlName="email" class="focus:ring-2 focus:ring-purple-600 border-0 placeholder-gray-500 placeholder-opacity-50 w-full" placeholder="email">
+                            </div>
+                        </div>
+                        
+                        <button type="submit"
+                            class="py-2 w-full my-5 px-3 border border-transparent shadow-sm text-sm font-medium text-white hover:bg-purple-600 bg-purple-600">
+                            Submit
+                        </button>
+                        <div class="w-full">
+                            <a [routerLink]="''" class="float-right uppercase text-purple-600"> Already have account ? </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+</div>

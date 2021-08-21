@@ -1,0 +1,87 @@
+<main class="h-full mt-28 mb-10 w-full">
+    <div class="p-2 h-full w-full">
+        <h2 class="font-bold text-purple-400 text-2xl"> Invoices</h2>
+        <!-- slider -->
+        
+        <div class="grid col-span-1">
+            <div class="carousel rounded-box">
+
+                <ng-container *ngIf="invoices != null && invoices.length != 0">
+                    <div *ngFor="let invoice of invoices; index as i; " class="carousel-item ">
+                        <div class="py-8 flex flex-row  justify-between items-center">
+                            <div class="relative">
+                                <div class="mr-2 p-6 bg-white rounded-lg shadow-xl w-cardw h-cardh">
+                                    <h4 class="font-black text-purple-400 text-2xl">{{ invoice?.amount | currency: '₦' }}</h4>
+                                    <span class="text-gray-400">
+                                        {{ invoice.bank_name }}
+                                    </span>
+                                    <h5 class="text-gray-400 mt-6 font-sm">{{ invoice.account_name }}</h5>
+                                </div>
+                                <div class="absolute p-2 text-center font-extrabold rounded-full bg-purple-600 shadow-xl text-gray-300 left-custom30 top-custom9">{{ invoice.account_number }}</div> 
+                            </div>                        
+                        </div>
+                    </div>
+                </ng-container>
+
+
+                <ng-container *ngIf="invoices == null || invoices.length == 0">
+                    <div class="carousel-item">
+                        <div class="py-8 flex flex-row justify-between items-center">
+                            <div class="relative">
+                                <div class="mr-2 p-6 bg-white rounded-lg shadow-xl">
+                                    <a>
+                                        <h5 class="text-red-400 mt-9 font-sm ">No Data Available</h5>
+                                    </a>    
+                                </div>
+                                <div class="absolute p-2 text-center font-extrabold rounded-full hover:bg-red-300 hover:text-red-600 bg-red-600 shadow-xl text-gray-300 left-12 top-3 border-4 border-red-300">Make It</div> 
+                            </div>                        
+                        </div>
+                    </div>
+                </ng-container>
+
+            </div>
+        </div>
+
+        <div class="widthinherit my-2 grid sm:grid-cols-2 gap-x-4">
+            <div class="h-96 p-6 my-1 bg-white">
+                <h4 class="text-2xl mb-4 mx-2 text-purple-400">Recent Log</h4>
+                
+                <div class="flex justify-between items-center m-2 rounded-md hover:border-purple-400 hover:border-2 bg-gray-100">
+                    <div class="p-3">
+                        <h5 class="text-2xl font-black break-words mb-2 text-purple-400"> Credit </h5>
+                        <span class="text-md font-normal break-words mb-4 text-grey-400">Money In</span>
+                    </div> 
+                    <div class="p-3">
+                        <h5 class="text-xl font-black break-words mb-2 text-yellow-400">
+                            ₦2,329,000
+                        </h5>
+                        <span class="text-md font-normal break-words mb-4 text-grey-400">   
+                            2021-04-26 16:09:39
+                         </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-96 p-6 my-1 bg-white">
+                <h4 class="text-2xl mb-4 mx-2 text-purple-400">Recently Paid</h4>
+                
+                <div class="flex justify-between items-center m-2 rounded-md hover:border-purple-400 hover:border-2 bg-gray-100">
+                    <div class="p-3">
+                        <h5 class="text-xl font-black mb-2 text-purple-400"> Fedelity Bank </h5>
+                        <span class="text-md font-normal mb-4 text-grey-400">ahamba solomon</span>
+                    </div> 
+                    <div class="p-3">
+                        <h5 class="text-xl font-black mb-2 text-yellow-400">
+                            ₦2,329,000
+                        </h5>
+                        <span class="text-md font-normal mb-4 text-grey-400">   
+                            567679656777
+                         </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+</main>

@@ -1,0 +1,49 @@
+<div class="flex h-screen fixed w-screen">
+    <div class="w-1/5 xs:hidden mainsidebar sm:block h-full">
+        <div class="py-4 h-screen">
+            <app-sidebar></app-sidebar>
+        </div>
+    </div>
+    <div class="bg-gray-300 h-full flex-1 overflow-y-scroll">
+        <div  class="mobile-toggle h-20 z-5 flex fixed xs:w-full sm:w-4/5 justify-between items-center shadow-lg w-full bg-white pr-4">
+            <div class="pl-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-purple-400 hover:bg-gray-100 hover:shadow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </div>
+            <div class="flex text-purple-400 hover:text-purple-900">
+                <div class="flex-col">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+                    </svg>
+                </div>
+                <div class="flex-col mx-2">
+                    <h5> {{ userDetails$.firstname }} {{ userDetails$.lastname }} </h5>
+                </div>
+                <div class="dropdown dropdown-end">
+                    <div class="flex-col mx-3" tabindex="0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0" class="p-2 shadow cursor-pointer dropdown-content bg-base-100 w-36">
+                        <li>
+                          <a>Profile</a>
+                        </li> 
+                        <li (click)="logout()">
+                          <a>Logout</a>
+                        </li> 
+                    </ul>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <router-outlet></router-outlet>
+        <!-- <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus consequatur sit pariatur vitae minus architecto, natus hic officia aut! Sunt, doloribus? Doloribus sequi quasi aliquam inventore dolorem ex veniam debitis?
+        </div> -->
+
+    </div>
+</div>

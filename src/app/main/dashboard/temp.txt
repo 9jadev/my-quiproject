@@ -1,0 +1,102 @@
+<div class="m-0 p-0 ">
+    <div class="grid sm:grid-cols-12  bg-gray-100  m-0">
+        <div class="mainsidebar col-span-2 bg-purple-400 inset-y-0 left-0 transform -translate-x-full sm:relative sm:translate-x-0 transition duration-200 ease-in-out">
+            <div class="p-4">
+                <app-sidebar></app-sidebar>
+            </div>
+        </div>
+        <div class="maincontent col-span-10">
+            <div  class="mobile-toggle h-14 z-5 flex sticky justify-between items-center shadow-lg w-full bg-white pr-4">
+                <div class="pl-3" (click)="togglesidebar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-purple-400 hover:bg-gray-100 hover:shadow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </div>
+                <div class="flex text-purple-400 hover:text-purple-900">
+                    <div class="flex-col">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+                        </svg>
+                    </div>
+                    <div class="flex-col mx-2">
+                        <h5>Ahamba Solomon </h5>
+                    </div>
+                    <div class="dropdown dropdown-end">
+                        <div class="flex-col mx-3" tabindex="0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0" class="p-2 shadow dropdown-content bg-base-100 w-36">
+                            <li>
+                              <a>Profile</a>
+                            </li> 
+                            <li>
+                              <a>Logout</a>
+                            </li> 
+                        </ul>
+                    </div>
+                    
+
+                </div>
+            </div>
+            <main class="p-3">
+                <h2 class="font-bold text-purple-400 text-2xl"> Invoices </h2>
+                <!-- slider -->
+                <div class="widthinherit">
+                    <div class="carousel rounded-box">
+                       
+
+                        <div class="carousel-item">
+                            <div class="py-8 flex flex-row justify-between items-center">
+                                <div class="relative">
+                                    <div class="mr-2 p-6 bg-white rounded-lg shadow-xl">
+                                        <h4 class="font-black text-purple-400 text-2xl">₦139.120</h4>
+                                        <span class="text-gray-400">
+                                            Eco bank
+                                        </span>
+                                        <h5 class="text-gray-400 mt-9 font-sm">Alarter Ahamba Solomon</h5>
+                                    </div>
+                                    <div class="absolute p-2 text-center font-extrabold rounded-full bg-purple-600 shadow-xl text-gray-300 left-12 top-custom9">987,29220,654</div> 
+                                </div>                        
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="py-8 flex flex-row justify-between items-center">
+                                <div class="relative">
+                                    <div class="mr-2 p-6 bg-white rounded-lg shadow-xl">
+                                        <h4 class="font-black text-purple-400 text-2xl">₦139.120</h4>
+                                        <span class="text-gray-400">
+                                            Eco bank
+                                        </span>
+                                        <h5 class="text-gray-400 mt-9 font-sm">Alarter Ahamba Solomon</h5>
+                                    </div>
+                                    <div class="absolute p-2 text-center font-extrabold rounded-full bg-purple-600 shadow-xl text-gray-300 left-12 top-custom9">987,29220,654</div> 
+                                </div>                        
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <div class="widthinherit my-4 grid sm:grid-cols-2 gap-x-4">
+                    <div class="h-96 p-6 bg-white">
+                        <h4 class="text-5xl mb-4 text-purple-400">Recent</h4>
+                        <div class="flex justify-between items-center m-4 rounded-t-md bg-gray-100">
+                            <div>
+                                <h5 class="text-2xl font-black mb-2 text-purple-400"> Credit </h5>
+                                <span class="text-md font-normal mb-4 text-purple-400">asbajn</span>
+                            </div> 
+                            <div>sidjks</div>
+                        </div>
+                    </div>
+                    <div class="h-96 bg-white">
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>

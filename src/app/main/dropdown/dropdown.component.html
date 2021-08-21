@@ -1,0 +1,8 @@
+
+<button (click)="maketoggle()" class="w-full">
+    <ng-content></ng-content>
+</button>
+
+<div *ngIf="toggle" class="w-full h-max bg-gray-300 border-1 rounded-md  mx-4 p-2">
+    <ng-content select="[droplinks]"></ng-content>  
+</div>
