@@ -1,12 +1,26 @@
-<div class="flex h-screen fixed w-screen">
-    <div class="w-1/5 xs:hidden mainsidebar sm:block h-full">
+<div class="flex h-screen relative w-screen">
+    <!-- <div class="w-20 h-full xs:absolute left-1/5 sm:hidden bg-red-700">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dicta nihil nemo nam adipisci officiis animi qui. Qui rerum obcaecati, consequuntur provident illum vero soluta placeat dolorum, vel tempora quasi.
+    </div> -->
+
+    
+    
+    <div class="w-1/5 mainsidebar sm:block h-full">
         <div class="py-4 h-screen">
             <app-sidebar></app-sidebar>
         </div>
     </div>
-    <div class="bg-gray-300 h-full flex-1 overflow-y-scroll">
-        <div  class="mobile-toggle h-20 z-5 flex fixed xs:w-full sm:w-4/5 justify-between items-center shadow-lg w-full bg-white pr-4">
-            <div class="pl-3">
+    
+
+    <div class="bg-gray-300 h-full relative flex-1 overflow-y-scroll">
+        <div class="nav__links sm:hidden">
+            <div class="py-4 h-screen">
+                <app-sidebar></app-sidebar>
+            </div>
+        </div>
+        <div (click)="overlay()" class="nav__overlay"></div>
+        <div  class="mobile-toggle h-20 z-5 flex fixed  w-full  sm:w-4/5 justify-between items-center shadow-lg bg-white pr-4">
+            <div (click)="drawer()" class="pl-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-purple-400 hover:bg-gray-100 hover:shadow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -39,7 +53,7 @@
 
             </div>
         </div>
-
+        
         <router-outlet></router-outlet>
         <!-- <div>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus consequatur sit pariatur vitae minus architecto, natus hic officia aut! Sunt, doloribus? Doloribus sequi quasi aliquam inventore dolorem ex veniam debitis?

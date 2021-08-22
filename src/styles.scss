@@ -3,7 +3,9 @@
 @import 'tailwindcss/utilities';
 /* You can add global styles to this file, and also import other style files */
 
-
+body {
+    cursor: default;
+}
 .logincontainer {
     @apply grid sm:grid-cols-2 mx-5 my-3;
     height: 100vh;
@@ -76,3 +78,48 @@ main::-webkit-scrollbar-thumb {
 //         }
 //     }
 // }
+
+
+
+.nav__links {
+    // @media only screen and (max-width: 600px)  {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        height: 100vh;
+        width: max-content;
+        background: #FFFFFF;
+        // background: #A78BFA;
+        transform: translateX(-731px);
+        transition: transform 0.3s;
+    // }
+    // display: none;
+}
+
+
+.nav__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(156 125 251 / 19%);
+    backdrop-filter: blur(2px);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 6
+    
+}
+
+.nav__open  {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.nav__open .nav__links {
+    transform: translateX(0);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}

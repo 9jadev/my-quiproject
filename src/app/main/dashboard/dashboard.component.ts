@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class DashboardComponent implements OnInit {
   userDetails$:any;
+  isOpen:boolean = false;
   constructor(private auth: AuthService) { }
   togglesidebar () {
     const sidebar = document.querySelector(".mainsidebar");
@@ -18,7 +19,18 @@ export class DashboardComponent implements OnInit {
    logout() {
     this.auth.clearSessionStorage()
   }
-
+  drawer() {
+    const sideb = document.querySelector(".nav__links");
+    const nav__overlay = document.querySelector(".nav__overlay");
+    sideb?.classList.toggle('nav__open');
+    nav__overlay?.classList.toggle('nav__open');
+  }
+  overlay () {
+    const sideb = document.querySelector(".nav__links");
+    const nav__overlay = document.querySelector(".nav__overlay");
+    sideb?.classList.remove('nav__open');
+    nav__overlay?.classList.remove('nav__open');
+  }
   ngOnInit(): void {
     this.userDetails$ = this.auth.getUser$();
   }

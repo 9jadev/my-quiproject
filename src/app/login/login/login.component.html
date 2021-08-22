@@ -10,7 +10,7 @@
         <h1 class="mx-3 text-2xl text-purple-700"> Login Now </h1>
         
         <div class="px-3 focus:outline-none">
-          <label for="email" class="block text-400 my-2"> Email</label>
+          <label for="email" class="block text-400 my-2 w-full"> Email</label>
           <input id="email" type="email" formControlName="email" class="focus:ring-2 focus:ring-purple-600 border-0 placeholder-gray-500 placeholder-opacity-50 w-full" placeholder="email">
           <ng-container *ngIf="(formControls.email.dirty || formControls.email.touched) && formControls.email.errors">
             <span *ngIf="formControls.email.errors.required" class="loginerror">Email is required</span>
@@ -27,7 +27,7 @@
         
 
         <div class="px-3 focus:outline-none relative">
-          <label for="password" class="block text-400 my-2"> Password</label>
+          <label for="password" class="block text-400 my-2 w-full"> Password</label>
           <input [type]="eye ? 'password' : 'text'" id="password" formControlName="password" class="focus:ring-2 focus:ring-purple-600 border-0 placeholder-gray-500 placeholder-opacity-50" placeholder="password" />
           <!-- <span >Password requires not less than 3 characters. </span> -->
           <svg xmlns="http://www.w3.org/2000/svg" (click)="eyetoggle()" *ngIf="!eye" class="h-5 w-5 absolute cursor-pointer top-10 right-5" viewBox="0 0 20 20" fill="currentColor">
