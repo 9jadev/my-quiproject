@@ -64,16 +64,19 @@
 
                     <div>
                         <div class="py-8 flex flex-row  justify-between items-center">
-                            <div class="relative">
-                                <div class="mr-2 p-6 bg-white rounded-lg shadow-xl w-cardw h-cardh">
-                                    <h4 class="font-black text-purple-400 text-2xl">zdjov</h4>
-                                    <span class="text-gray-400">
-                                        203r23d
-                                    </span>
-                                    <h5 class="text-gray-400 mt-6 font-sm">invoice.account_name </h5>
+                            <ng-container *ngIf="loading == false && invoices.length != 0">
+                                <div class="relative">
+                                    <div class="mr-2 p-6 bg-white rounded-lg shadow-xl w-cardw h-cardh">
+                                        <h4 class="font-black text-purple-400 text-2xl">{{ invoices[invoices.length-1].amount | currency:'NGN' }}</h4>
+                                        <span class="text-gray-400">
+                                            {{ invoices[invoices.length-1].bank_name }}
+                                        </span>
+                                        <h5 class="text-gray-400 mt-6 font-sm"> {{ invoices[invoices.length-1].account_name }} </h5>
+                                    </div>
+                                    <div class="absolute p-2 text-center font-extrabold rounded-full bg-purple-600 shadow-xl text-gray-300 left-20 top-custom9"> {{ invoices[invoices.length-1].account_number }} </div> 
                                 </div>
-                                <div class="absolute p-2 text-center font-extrabold rounded-full bg-purple-600 shadow-xl text-gray-300 left-10 top-custom9"> invoice.account_number </div> 
-                            </div>                        
+                            </ng-container>
+
                         </div>
                     </div>
 
