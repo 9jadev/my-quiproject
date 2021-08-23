@@ -50,7 +50,7 @@ export class AuthService {
     return this.http.post(`${environment.baseurl}customer/login`, user).pipe(catchError((error) => throwError(error)));
   }
 
- fetchDashboard() {
-  return this.http.post(`${environment.baseurl}invoice/homelist`,{}).pipe(catchError((error) => throwError(error)));
+  fetchDashboard() {
+    return this.http.post(`${environment.baseurl}invoice/homelist`,{}).pipe(catchError((error) => throwError(error)));
   }
 }

@@ -1,0 +1,175 @@
+<main class="h-full mt-28 mb-10 p-2 w-full">
+    <div>
+        <h2 class="font-bold text-purple-400 text-2xl"> Invoices</h2>
+        <div class="mt-5">
+            <div class="w-full grid sm:grid-cols-12 gap-2">
+                <div class="bg-white sm:col-span-6">
+
+                    <h1 class="text-xl ml-5 mt-3 text-purple-700"> Make Invoice </h1>
+                    <form (ngSubmit)="create_inv(create_invoice.value)" [formGroup]="create_invoice" class="p-5 grid sm:grid-cols-12 gap-2">
+                        <div class="sm:col-span-6">
+                            <div class="w-full">
+                                <label for="firstname" class="block text-400 my-2 text-xs text-purple-600"> Firstname </label>
+                                <input id="firstname" type="text" formControlName="firstname" class="focus:ring-2 focus:ring-purple-600 border-1 placeholder-gray-500 placeholder-opacity-50 w-full border-purple-600" placeholder="Firstname">
+                                <ng-container *ngIf="(formControls.firstname.dirty || formControls.firstname.touched) && formControls.firstname.errors">
+                                    <span *ngIf="formControls.firstname.errors.required" class="loginerror">Firstname is required</span>
+                                    <span *ngIf="formControls.firstname.errors.minlength" class="loginerror">Firstname requires 3 </span>
+                                </ng-container>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-6">
+                            <div class="w-full">
+                                <label for="Lastname" class="block text-400 my-2 text-xs text-purple-600"> Lastname </label>
+                                <input id="Lastname" type="text" formControlName="lastname" class="focus:ring-2 focus:ring-purple-600 border-1 placeholder-gray-500 placeholder-opacity-50 w-full border-purple-600" placeholder="Lastname">
+                                <ng-container *ngIf="(formControls.lastname.dirty || formControls.lastname.touched) && formControls.lastname.errors">
+                                    <span *ngIf="formControls.lastname.errors.required" class="loginerror">Lastname is required</span>
+                                    <span *ngIf="formControls.lastname.errors.minlength" class="loginerror">Lastname requires 3 </span>
+                                </ng-container>
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-6">
+                            <div class="w-full">
+                                <label for="Phone Number" class="block text-400 my-2 text-xs text-purple-600"> Phone Number </label>
+                                <input id="Phone Number" type="text" formControlName="customer_phone" class="focus:ring-2 focus:ring-purple-600 border-1 placeholder-gray-500 placeholder-opacity-50 w-full border-purple-600" placeholder="Phone Number">
+                                <ng-container *ngIf="(formControls.customer_phone.dirty || formControls.customer_phone.touched) && formControls.customer_phone.errors">
+                                    <span *ngIf="formControls.customer_phone.errors.required" class="loginerror"> Phone Number is required</span>
+                                    <span *ngIf="formControls.customer_phone.errors.minlength" class="loginerror"> Phone Number requires 3 </span>
+                                    <span *ngIf="formControls.customer_phone.errors.pattern" class="loginerror"> Phone Number pattern </span>
+                                </ng-container>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-6">
+                            <div class="w-full">
+                                <label for="Amount" class="block text-400 my-2 text-xs text-purple-600"> Amount </label>
+                                <input id="Amount" type="text" formControlName="amount" class="focus:ring-2 focus:ring-purple-600 border-1 placeholder-gray-500 placeholder-opacity-50 w-full border-purple-600" placeholder="Amount">
+                                <ng-container *ngIf="(formControls.amount.dirty || formControls.amount.touched) && formControls.amount.errors">
+                                    <span *ngIf="formControls.amount.errors.required" class="loginerror"> Amount is required</span>
+                                    <span *ngIf="formControls.amount.errors.min" class="loginerror"> Amount should be 500 and above </span>
+                                </ng-container>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-3 w-full ">
+                            <button class="mt-3 py-2 w-full border border-transparent shadow-sm text-sm font-medium text-white hover:bg-purple-700 bg-purple-600">Submit</button>
+                        </div>
+
+                        <!-- <button type="submit" [disabled]="loggIn"
+                            class="py-2 w-full px-3 border border-transparent shadow-sm text-sm font-medium text-white hover:bg-purple-700 bg-purple-600">
+                            {{ loggIn ? "Submiting.." : "Submit" }}
+                        </button> -->
+                    </form>
+                </div>
+                <div class=" flex justify-center items-center sm:col-span-6">
+                    
+
+                    <div>
+                        <div class="py-8 flex flex-row  justify-between items-center">
+                            <div class="relative">
+                                <div class="mr-2 p-6 bg-white rounded-lg shadow-xl w-cardw h-cardh">
+                                    <h4 class="font-black text-purple-400 text-2xl">zdjov</h4>
+                                    <span class="text-gray-400">
+                                        203r23d
+                                    </span>
+                                    <h5 class="text-gray-400 mt-6 font-sm">invoice.account_name </h5>
+                                </div>
+                                <div class="absolute p-2 text-center font-extrabold rounded-full bg-purple-600 shadow-xl text-gray-300 left-10 top-custom9"> invoice.account_number </div> 
+                            </div>                        
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="container mx-auto mb-3">
+        <div class="flex justify-end items-center my-3">
+            <div class="sm:w-2/5">
+                <div class="w-full">
+                    <input id="search" type="text" class="focus:ring-2 focus:ring-purple-600 focus:shadow-2xl border-1 placeholder-gray-500 placeholder-opacity-50 w-full border-purple-600" placeholder="Search">
+                </div>
+            </div>
+        </div>
+        <div class="w-full overflow-hidden shadow-lg">
+            <div class="w-full overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-purple-700 uppercase">
+                            <th class="px-4 py-3">S/N</th>
+                            <th class="px-4 py-3">Customer Name</th>
+                            <th class="px-4 py-3">Bank Name</th>
+                            <th class="px-4 py-3">Account Number</th>
+                            <th class="px-4 py-3">Account Name</th>
+                            <th class="px-4 py-3">Reference</th>
+                            <th class="px-4 py-3">Amount</th>
+                            <th class="px-4 py-3">Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white">
+                        <ng-container *ngIf="invoices.length == 0 && loading == false">
+                            <tr class="text-gray-700">
+                                <td class="text-center py-3" colspan="8">
+                                    <span>No record.</span>
+                                </td>
+                            </tr>
+                        </ng-container>
+                        <ng-container *ngIf="loading == true">
+                            <tr class="text-gray-700">
+                                <td class="text-center py-3" colspan="8">
+                                    <span>Loading.....</span>
+                                </td>
+                            </tr>
+                        </ng-container>
+                        <ng-container *ngIf="loading == false && invoices.length != 0">
+                            <tr *ngFor="let invoice of invoices; let i = index" [attr.data-index]="'serial-${i}'" class="text-gray-700 hover:bg-purple-300">
+                                <td class="px-4 py-3 text-ms font-semibold border">
+                                    {{ i+1 }}
+                                </td>
+                                <td class="px-4 py-3 border">
+                                    {{ invoice.customer_name }}
+                                </td>
+                                <td class="px-4 py-3 border">
+                                    {{ invoice.bank_name }}
+                                </td>
+                                <td class="px-4 py-3 text-ms border">
+                                    {{ invoice.account_number }}
+                                </td>
+                                <td class="px-4 py-3 text-ms border">
+                                    {{ invoice.account_name }}
+                                </td>
+                                <td class="px-4 py-3 text-sm border">
+                                    {{ invoice.reservationReference }}
+                                </td>
+                                <td class="px-4 py-3 text-sm border"> {{ invoice?.amount | currency:'NGN' }}</td>
+                                <td class="px-4 py-3 text-xs border">
+                                    <span *ngIf="invoice.completed == 'no'"  class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Open </span>
+                                    <span *ngIf="invoice.completed == 'yes'"  class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-400 rounded-sm"> Closed </span>
+                                </td>
+                            </tr>
+                        </ng-container>
+                        
+                    </tbody>    
+                </table>
+                
+            </div>         
+        </div>
+        <div class="flex justify-end items-center">
+            <div class="sm:w-2/5">
+                <div class="w-full">
+                    <div class="float-right">
+                        <button class="mt-3 mx-2 py-2 px-3  border border-transparent shadow-sm text-sm font-medium text-white hover:bg-purple-700 bg-purple-600">First</button>
+                        <button class="mt-3 mx-2 py-2 px-3  border border-transparent shadow-sm text-sm font-medium text-white hover:bg-purple-700 bg-purple-600">Previous</button>
+                        <button class="mt-3 mx-2 py-2 px-3  border border-transparent shadow-sm text-sm font-medium text-white hover:bg-purple-700 bg-purple-600">Next</button>
+                        <button class="mt-3 mx-2 py-2 px-3  border border-transparent shadow-sm text-sm font-medium text-white hover:bg-purple-700 bg-purple-600">Last</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="h-3"></div>
+    <!-- <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa necessitatibus quo ea labore error quod accusantium delectus adipisci possimus cupiditate, maxime dolorem. Nam vero mollitia culpa quod explicabo! Quam, doloremque.
+    </div> -->
+</main>

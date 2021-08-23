@@ -28,7 +28,7 @@
 
         <div class="px-3 focus:outline-none relative">
           <label for="password" class="block text-400 my-2 w-full"> Password</label>
-          <input [type]="eye ? 'password' : 'text'" id="password" formControlName="password" class="focus:ring-2 focus:ring-purple-600 border-0 placeholder-gray-500 placeholder-opacity-50" placeholder="password" />
+          <input [type]="eye ? 'password' : 'text'" id="password" formControlName="password" class="focus:ring-2 focus:ring-purple-600 border-0 placeholder-gray-500 placeholder-opacity-50 w-full" placeholder="password" />
           <!-- <span >Password requires not less than 3 characters. </span> -->
           <svg xmlns="http://www.w3.org/2000/svg" (click)="eyetoggle()" *ngIf="!eye" class="h-5 w-5 absolute cursor-pointer top-10 right-5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M3.707 2.293a1 1 0 00-1.414 1.414l14 14a1 1 0 001.414-1.414l-1.473-1.473A10.014 10.014 0 0019.542 10C18.268 5.943 14.478 3 10 3a9.958 9.958 0 00-4.512 1.074l-1.78-1.781zm4.261 4.26l1.514 1.515a2.003 2.003 0 012.45 2.45l1.514 1.514a4 4 0 00-5.478-5.478z" clip-rule="evenodd" />

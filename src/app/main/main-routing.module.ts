@@ -10,6 +10,10 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: () => import('../dashboard/home/home.module').then(m => m.HomeModule)
+      },
+      {
+        path: 'invoices',
+        loadChildren: () => import('../dashboard/invoices/invoices.module').then(m => m.InvoicesModule)
       }
     ]
   }

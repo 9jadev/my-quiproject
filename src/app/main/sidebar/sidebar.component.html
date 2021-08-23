@@ -9,35 +9,24 @@
     <div class="mt-12 h-80 px-4 overflow-y-scroll menu-scroll">
         <ul class="">
             
-            <li class="my-3 rounded-lg text-purple-800 bg-purple-200 items-center flex cursor-auto justify-start p-2 h-10">
-              <a class="flex justify-center items-center">
+            <li routerLinkActive="bg-purple-200" class="my-3 rounded-lg text-purple-800 items-center flex cursor-auto justify-start p-2 h-10">
+              <a class="flex justify-start items-center w-full cursor-auto" [routerLink]="'/dashboard'">
                 <svg xmlns="http://www.w3.org/2000/svg" class="inline-block cursor-auto w-5 h-5 mr-2 stroke-current" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                 </svg>
-                <span class="cursor-auto">
+                <span class="cursor-default">
                     Dashboard
                 </span>
               </a>
             </li> 
 
-            <!-- <li class="my-3 rounded-lg text-purple-800 hover:bg-purple-200 items-center cursor-auto flex justify-start p-2 h-10">
-                <a class="flex justify-center items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block cursor-auto w-5 h-5 mr-2 stroke-current" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                    </svg>
-                    <span class="cursor-auto">
-                        Admin
-                    </span>
-                </a>
-              </li> -->
-
-
-            <li class="my-3 rounded-lg text-purple-800 hover:bg-purple-200 cursor-auto items-center flex justify-start p-2 h-10">
-                <a class="flex justify-center items-center">
+        
+            <li routerLinkActive="bg-purple-200" class="my-3 rounded-lg text-purple-800 hover:bg-purple-200 cursor-auto items-center flex justify-start p-2 h-10">
+                <a class="flex justify-start items-center w-full" [routerLink]="'/dashboard/invoices'">
                     <svg xmlns="http://www.w3.org/2000/svg" class="inline-block cursor-auto w-5 h-5 mr-2 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
-                    <span class="cursor-auto">
+                    <span class="cursor-default">
                         Invoices
                     </span>
                 </a>
@@ -45,8 +34,8 @@
             
             <app-dropdown>
                 <li class="my-1 rounded-lg text-purple-800 hover:bg-purple-200 cursor-auto items-center flex justify-start p-2 h-10">
-                    <div class="flex flex-col justify-start items-start">
-                        <a class="flex justify-center items-center">
+                    <!-- <div class="flex flex-col justify-start items-start"> -->
+                        <a class="flex justify-start items-center w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="inline-block cursor-auto w-5 h-5 mr-2 stroke-current" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
                             </svg>
@@ -54,7 +43,7 @@
                                 Admin
                             </span>
                         </a>
-                    </div>
+                    <!-- </div> -->
                 </li>
                 <div droplinks>
                     <ul>

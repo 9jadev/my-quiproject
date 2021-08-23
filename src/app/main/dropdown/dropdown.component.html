@@ -3,6 +3,6 @@
     <ng-content></ng-content>
 </button>
 
-<div *ngIf="toggle" class="w-full h-max bg-purple-200 border-1 rounded-md  mx-4 p-2">
+<div *ngIf="toggle"  style="transition: display 0.5s 0s ease;"  class="w-full h-max transition duration-500 ease-in-out bg-purple-200 border-1 rounded-md p-2 ">
     <ng-content select="[droplinks]"></ng-content>  
 </div>
