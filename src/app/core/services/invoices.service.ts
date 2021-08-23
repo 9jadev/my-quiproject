@@ -14,5 +14,9 @@ export class InvoicesService {
   getinvoices () {
     return this.http.post(`${environment.baseurl}invoice/list`,{}).pipe(catchError((error) => throwError(error)));
   }
+
+  create_invoices (formdata:any) {
+    return this.http.post(`${environment.baseurl}invoice/index`,formdata).pipe(catchError((error) => throwError(error)));
+  }
   
 }

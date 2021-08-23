@@ -10,7 +10,7 @@
                     <div *ngFor="let invoice of invoices; index as i; " class="carousel-item ">
                         <div class="py-8 flex flex-row  justify-between items-center">
                             <div class="relative">
-                                <div class="mr-2 p-6 bg-white rounded-lg shadow-xl w-cardw h-cardh">
+                                <div class="mr-2 px-6 py-3 bg-white rounded-lg shadow-xl w-cardw h-cardh">
                                     <h4 class="font-black text-purple-400 text-2xl">{{ invoice?.amount | currency: '₦' }}</h4>
                                     <span class="text-gray-400">
                                         {{ invoice.bank_name }}

@@ -10,20 +10,20 @@
                         <div class="sm:col-span-6">
                             <div class="w-full">
                                 <label for="firstname" class="block text-400 my-2 text-xs text-purple-600"> Firstname </label>
-                                <input id="firstname" type="text" formControlName="firstname" class="focus:ring-2 focus:ring-purple-600 border-1 placeholder-gray-500 placeholder-opacity-50 w-full border-purple-600" placeholder="Firstname">
-                                <ng-container *ngIf="(formControls.firstname.dirty || formControls.firstname.touched) && formControls.firstname.errors">
-                                    <span *ngIf="formControls.firstname.errors.required" class="loginerror">Firstname is required</span>
-                                    <span *ngIf="formControls.firstname.errors.minlength" class="loginerror">Firstname requires 3 </span>
+                                <input id="firstname" type="text" formControlName="customer_firstname" class="focus:ring-2 focus:ring-purple-600 border-1 placeholder-gray-500 placeholder-opacity-50 w-full border-purple-600" placeholder="Firstname">
+                                <ng-container *ngIf="(formControls.customer_firstname.dirty || formControls.customer_firstname.touched) && formControls.customer_firstname.errors">
+                                    <span *ngIf="formControls.customer_firstname.errors.required" class="loginerror">Firstname is required</span>
+                                    <span *ngIf="formControls.customer_firstname.errors.minlength" class="loginerror">Firstname requires 3 </span>
                                 </ng-container>
                             </div>
                         </div>
                         <div class="sm:col-span-6">
                             <div class="w-full">
                                 <label for="Lastname" class="block text-400 my-2 text-xs text-purple-600"> Lastname </label>
-                                <input id="Lastname" type="text" formControlName="lastname" class="focus:ring-2 focus:ring-purple-600 border-1 placeholder-gray-500 placeholder-opacity-50 w-full border-purple-600" placeholder="Lastname">
-                                <ng-container *ngIf="(formControls.lastname.dirty || formControls.lastname.touched) && formControls.lastname.errors">
-                                    <span *ngIf="formControls.lastname.errors.required" class="loginerror">Lastname is required</span>
-                                    <span *ngIf="formControls.lastname.errors.minlength" class="loginerror">Lastname requires 3 </span>
+                                <input id="Lastname" type="text" formControlName="customer_lastname" class="focus:ring-2 focus:ring-purple-600 border-1 placeholder-gray-500 placeholder-opacity-50 w-full border-purple-600" placeholder="Lastname">
+                                <ng-container *ngIf="(formControls.customer_lastname.dirty || formControls.customer_lastname.touched) && formControls.customer_lastname.errors">
+                                    <span *ngIf="formControls.customer_lastname.errors.required" class="loginerror">Lastname is required</span>
+                                    <span *ngIf="formControls.customer_lastname.errors.minlength" class="loginerror">Lastname requires 3 </span>
                                 </ng-container>
                             </div>
                         </div>
@@ -42,15 +42,17 @@
                         <div class="sm:col-span-6">
                             <div class="w-full">
                                 <label for="Amount" class="block text-400 my-2 text-xs text-purple-600"> Amount </label>
-                                <input id="Amount" type="text" formControlName="amount" class="focus:ring-2 focus:ring-purple-600 border-1 placeholder-gray-500 placeholder-opacity-50 w-full border-purple-600" placeholder="Amount">
+                                <input id="Amount" type="number" formControlName="amount" class="focus:ring-2 focus:ring-purple-600 border-1 placeholder-gray-500 placeholder-opacity-50 w-full border-purple-600" placeholder="Amount">
                                 <ng-container *ngIf="(formControls.amount.dirty || formControls.amount.touched) && formControls.amount.errors">
                                     <span *ngIf="formControls.amount.errors.required" class="loginerror"> Amount is required</span>
-                                    <span *ngIf="formControls.amount.errors.min" class="loginerror"> Amount should be 500 and above </span>
+                                    <span *ngIf="formControls.amount.errors.min" class="loginerror w-full break-words"> Amount should be 500 and above </span>
                                 </ng-container>
                             </div>
                         </div>
                         <div class="sm:col-span-3 w-full ">
-                            <button class="mt-3 py-2 w-full border border-transparent shadow-sm text-sm font-medium text-white hover:bg-purple-700 bg-purple-600">Submit</button>
+                            <button [disabled]="submiting" class="mt-3 py-2 w-full border border-transparent shadow-sm text-sm font-medium text-white hover:bg-purple-700 bg-purple-600">
+                                {{ submiting ? "Submiting.." : "Submit" }}
+                            </button>
                         </div>
 
                         <!-- <button type="submit" [disabled]="loggIn"
@@ -66,14 +68,14 @@
                         <div class="py-8 flex flex-row  justify-between items-center">
                             <ng-container *ngIf="loading == false && invoices.length != 0">
                                 <div class="relative">
-                                    <div class="mr-2 p-6 bg-white rounded-lg shadow-xl w-cardw h-cardh">
-                                        <h4 class="font-black text-purple-400 text-2xl">{{ invoices[invoices.length-1].amount | currency:'NGN' }}</h4>
+                                    <div class="mr-2 px-6 py-3 bg-white rounded-lg shadow-xl w-cardw h-cardh">
+                                        <h4 class="font-black text-purple-400 text-2xl">{{ invoices[0].amount | currency:'NGN' }}</h4>
                                         <span class="text-gray-400">
-                                            {{ invoices[invoices.length-1].bank_name }}
+                                            {{ invoices[0].bank_name }}
                                         </span>
-                                        <h5 class="text-gray-400 mt-6 font-sm"> {{ invoices[invoices.length-1].account_name }} </h5>
+                                        <h5 class="text-gray-400 mt-6 font-sm"> {{ invoices[0].account_name }} </h5>
                                     </div>
-                                    <div class="absolute p-2 text-center font-extrabold rounded-full bg-purple-600 shadow-xl text-gray-300 left-20 top-custom9"> {{ invoices[invoices.length-1].account_number }} </div> 
+                                    <div class="absolute p-2 text-center font-extrabold rounded-full bg-purple-600 shadow-xl text-gray-300 left-20 top-custom9"> {{ invoices[0].account_number }} </div> 
                                 </div>
                             </ng-container>
 

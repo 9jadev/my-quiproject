@@ -15,6 +15,7 @@ export class InvoicesComponent implements OnInit {
   create_invoice: FormGroup = new FormGroup({});
   invoices: Array<any> = [];
   loading: boolean = false;
+  submiting: boolean = false;
 
   constructor(private invoiceservice: InvoicesService,private loadingBar: LoadingBarService, private toastr: ToastrService, private router: Router) { }
 
@@ -31,7 +32,25 @@ export class InvoicesComponent implements OnInit {
     if (this.create_invoice.invalid) {
       return;
     }
-    console.log(formvalue)
+    this.loadingBar.stop();
+    this.loadingBar.start();
+    this.submiting = false
+    this.submiting = true
+    this.invoiceservice.create_invoices(formvalue).subscribe((res:any) => {
+      if (res.status == "success") {
+        this.toastr.success(res.message, "Successful.");
+        this.getinvices();
+      }
+      if (res.status == "error") {
+        this.toastr.error(res.message, "whoops.");
+      }
+      this.loadingBar.stop();
+      this.submiting = false
+    },(err:any) => {
+      this.toastr.error("error occoured.", "whoops.");
+      this.loadingBar.stop();
+      this.submiting = false
+    })
   }
 
   getinvices () {
@@ -49,7 +68,6 @@ export class InvoicesComponent implements OnInit {
         this.loading = false
         this.toastr.error(res.message, "Error");
       }
-      console.log(res)
       this.loadingBar.stop();
     }, (err) => {
       this.loadingBar.stop();
@@ -59,8 +77,8 @@ export class InvoicesComponent implements OnInit {
 
   ngOnInit(): void {
     this.create_invoice = new FormGroup({
-      "firstname": new FormControl(null , [Validators.required, Validators.minLength(3)]),
-      "lastname": new FormControl(null , [Validators.required, Validators.minLength(3)]),
+      "customer_firstname": new FormControl(null , [Validators.required, Validators.minLength(3)]),
+      "customer_lastname": new FormControl(null , [Validators.required, Validators.minLength(3)]),
       "customer_phone": new FormControl(null , [Validators.required, Validators.minLength(3),Validators.pattern("(0)[0-9]{10}")]),
       "amount": new FormControl(null, [Validators.required, Validators.min(500)])
     });
